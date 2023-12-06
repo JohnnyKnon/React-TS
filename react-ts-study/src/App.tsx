@@ -23,7 +23,7 @@ const data:Restaurant = {
 
 const App:React.FC = () => {
 
-  const [myRestaurant, setMyRestaurant] = useState<Restaurant>(data); // 제네릭을 이용해서 함수를 사용하는 순간에 타입을 정해주고 싶을때 사용
+  const [myRestaurant, setMyRestaurant] = useState<Restaurant>(data); // 제네릭을 이용해서 useState를 사용하는 순간에 타입을 정해주고 싶을때 사용
 
   return (
     <div className="App">
