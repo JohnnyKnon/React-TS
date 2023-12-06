@@ -23,11 +23,9 @@ export type Restaurant = {
 export type Address = {
     city:string;
     detail:string;
-    zipcode:number;
+    zipcode?:number; // ?는 zipcode가 있어도 그만 없어도 그만이지만 사용할때 주의해야됨, 만약 불러올때는 반드시 필요한 경우에 못불러올 수 도 있음
 }
 
-// Zipcode 없는 타입 만들기 (type 키워드의 장점) Omit 을 통해서 제외시킬 수 있음
-export type AddressWithoutZipcode = Omit<Address,'zipcode'>;
 
 // 메뉴타입
 export type Menu = {
