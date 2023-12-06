@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Store from './components/Store';
 import { Address, Restaurant } from './model/restaurant'; // 지정한 타입 불러오기 위함
+import BestMenu from './components/BestMenu';
 
 
 /**
@@ -29,9 +30,15 @@ const App:React.FC = () => {
     setMyRestaurant({...myRestaurant,address:address})
   }
 
+  // 최고의 음식 이름 보여주기
+  const showBestMenuName = (name:string) => {
+    return name;
+  }
+
   return (
     <div className="App">
       <Store info={myRestaurant} onChangeAddress={changeAddress} />
+      <BestMenu name="GyuDon" category = "GOHAN" price={1200} onShowBestMenuName={showBestMenuName} />
     </div>
   );
 }
