@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Store from './components/Store';
+import { Restaurant } from './model/restaurant'; // 지정한 타입 불러오기 위함
 
 
 /**
@@ -8,7 +10,7 @@ import './App.css';
  * 
  */
 
-const data = {
+const data:Restaurant = {
   name : '심야식당',
   category:'Japanese',
   address : {
@@ -22,7 +24,7 @@ const data = {
 const App:React.FC = () => {
   return (
     <div className="App">
-      
+      <Store info={data} />
     </div>
   );
 }
