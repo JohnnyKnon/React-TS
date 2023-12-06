@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Store from './components/Store';
-import { Restaurant } from './model/restaurant'; // 지정한 타입 불러오기 위함
+import { Address, Restaurant } from './model/restaurant'; // 지정한 타입 불러오기 위함
 
 
 /**
@@ -24,10 +24,14 @@ const data:Restaurant = {
 const App:React.FC = () => {
 
   const [myRestaurant, setMyRestaurant] = useState<Restaurant>(data); // 제네릭을 이용해서 useState를 사용하는 순간에 타입을 정해주고 싶을때 사용
+  // 주소 변경함수
+  const changeAddress = (address:Address) => {
+    setMyRestaurant({...myRestaurant,address:address})
+  }
 
   return (
     <div className="App">
-      <Store info={myRestaurant} />
+      <Store info={myRestaurant} onChangeAddress={changeAddress} />
     </div>
   );
 }
