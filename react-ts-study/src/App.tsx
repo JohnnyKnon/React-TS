@@ -38,7 +38,7 @@ const App:React.FC = () => {
   return (
     <div className="App">
       <Store info={myRestaurant} onChangeAddress={changeAddress} />
-      <BestMenu name="GyuDon" category = "GOHAN" price={1200} onShowBestMenuName={showBestMenuName} />
+      <BestMenu name="GyuDon" category = "GOHAN" onShowBestMenuName={showBestMenuName} />
     </div>
   );
 }
