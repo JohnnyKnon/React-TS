@@ -27,7 +27,7 @@ export type Address = {
 }
 
 // Zipcode 없는 타입 만들기 (type 키워드의 장점) Omit 을 통해서 제외시킬 수 있음
-export type AddressWithoutZipcode = Omit<Address,'zipcode'>
+export type AddressWithoutZipcode = Omit<Address,'zipcode'>;
 
 // 메뉴타입
 export type Menu = {
@@ -35,3 +35,6 @@ export type Menu = {
     price:number;
     category:string;
 }
+
+// Type중에서 원하는것만 선택해오기
+export type RestaurantOnlyCategory = Pick<Restaurant,'category'>;
