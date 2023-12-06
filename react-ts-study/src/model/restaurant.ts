@@ -36,3 +36,14 @@ export type Menu = {
 
 // Type중에서 원하는것만 선택해오기
 export type RestaurantOnlyCategory = Pick<Restaurant,'category'>;
+
+// 제네릭 T : <T> 는 data에 들어오는 값을 제대로 모를때, T를 사용해서 함수의 매개변수 처럼 타입을 필요할때마다 넣어서 사용할 수 있다. 
+export type ApiResponse<T> = {
+    data:T[];
+    totalPage:number;
+    page:number;
+}
+// 레스토랑 응답
+export type RestaurantResponse = ApiResponse<Restaurant>;
+// 메뉴 응답
+export type MenuResponse = ApiResponse<Menu>;
