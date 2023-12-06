@@ -7,6 +7,7 @@ import { Menu } from '../model/restaurant';
 //     onShowBestMenuName(name:string):string 
 // }
 
+// type 으로 interface extends 와 같이 해주는 방법
 type BestMenuProps = Menu & {
     onShowBestMenuName(name:string):string 
 }
